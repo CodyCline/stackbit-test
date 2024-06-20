@@ -4,7 +4,7 @@ import { ObjectModel } from "@stackbit/types";
 
 export default {
   stackbitVersion: '~0.6.0',
-	ssgName: 'next',
+	ssgName: 'nextjs',
 	nodeVersion: '18',
   buildCommand: 'npm run  build',
   // ...
